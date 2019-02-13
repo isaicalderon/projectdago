@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>CREA Y AMOS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="images/favicon.png">
+        <!-- Loading Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- Loading Flat UI Pro -->
+        <link href="css/flat-ui.min.css" rel="stylesheet">
+        <link href="css/flat-ui.css" rel="stylesheet">
+
+        <!-- css personalizados -->
+        <link href="css/index.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-inverse navbar-embossed navbar-expand-lg navbar-fixed-top" role="navigation" style="border-radius: 0">
+			    <a class="navbar-brand navlogo nopadding" style="padding:0;" href="index.php">
+			        <img class="logo" src="images/favicon2.png">
+			    </a>
+			    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse-01"></button>
+			    <div class="collapse navbar-collapse" id="navbar-collapse-01">
+			        <ul class="nav navbar-nav mr-auto">
+			            <li class=""><a href="#fakelink">Iglesias</a></li>
+			            <li><a href="#fakelink">Conocenos</a></li>
+			        </ul>
+			        <!-- <?php if(!$estado){ ?> -->
+			        <button id='log' class="btn btn-default" data-toggle="modal" data-target="#exampleModal">Iniciar sesión</button>
+			        <!-- <?php }else{ ?>
+
+			        <-- Inverted skin  --
+			        <div class="btn-group">
+			            <button class="btn btn-inverse dropdown-toggle" type="button" data-toggle="dropdown">
+			                <-- <?php echo $_SESSION['user_name']; ?> --
+			            </button>
+			            <ul class="dropdown-menu dropdown-menu-inverse" role="menu">
+			                <li><a href="#"><span class="fui-user"></span> Perfil</a></li>
+			                
+			                <-- <li><a href="#">Another action</a></li> --
+			                -- <li><a href="#">Something else here</a></li>     
+			                
+			                <li class="divider"></li>
+			                <li><a href="php/logout.php"><span class="fui-power"></span> Cerrar sesion</a></li>
+			            </ul>
+			        </div>
+			        <?php } ?>
+			         -->
+			    </div><!-- /.navbar-collapse -->
+			</nav><!-- /navbar -->
+			<!-- Modal -->
+			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+			    <div class="modal-dialog" role="document" >
+			        <div class="modal-content" style="border-radius: 0px">
+			            <div class="modal-body" style="padding: 3rem 0px;">
+			                <form action="php/login.php" method="post">
+			                    <center>
+			                    <div class="login-form" style="width: 75%">
+			                        <div class="form-group">
+			                            <input id='email' class="form-control login-field" type="email" name="email" placeholder="Email">
+			                            <label class="login-field-icon fui-user" for="login-mail"></label>
+			                        </div>
+			                        <div class="form-group">
+			                            <input id="pass" class="form-control login-field" type="password" name="pass" placeholder="Contraseña">
+			                            <label class="login-field-icon fui-lock" for="login-mail"></label>
+			                        </div>
+			                        <button class="btn btn-primary btn-lg btn-block" type="submit">Ingresar</button>
+			                        <a class="login-link" href="#">Lost your password?</a>
+			                    </div>
+			                    </center>
+			                </form>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+
+        </header>
+
+        <main role='main'>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <center>
+                        <div class="row">
+                            <div class="col-sm-10">
+                                <img src="images/logocre.png" style = "">
+                                <h2 class="index-text">Centro Regional de Estudios Apostólicos. Es una plataforma virtual donde podrás subir tus tareas e informarte de los siguientes sucesos.</h2>
+                            </div>
+                        </div>
+                        </center>
+                    </div>
+                    <div class="col-sm-4">
+                        <center>
+                        <div class="divreg">
+                            <center>
+                                <strong>
+                                    <b><h2>Registrate</h2></b>
+                                </strong>
+                            </center>
+                            <form method="POST" action="php/addAlumno.php" style="background:none" name="formulario">
+                                <div class="form-group">
+                                    <input name="nombre" required="" id="login-name" style="float:none;" type="text" class="form-control login-field" placeholder="Nombre">
+                                </div>
+                                <div class="form-group">
+                                    <input name="apellidos" required="" id="login-ape" style="float:none;" type="text" class="form-control login-field" placeholder="Apellidos">
+                                </div>
+                                <div class="form-group" id="emailForm">
+                                    <input id='emailError' class="form-control login-field" type="email" required="" name="email" placeholder="Correo Electronico" max-length="30">
+                                </div>
+                                <div class="switch-box">
+                                    <h2>Sexo</h2>
+                                    <div class="switch">
+                                        <input type="radio" class="switch-input" name="sexo" value="1" id="si" checked="">
+                                        <label for="si" class="switch-label switch-label-off">M</label>
+                                        <input type="radio" class="switch-input" name="sexo" value="0" id="no">
+                                        <label for="no" class="switch-label switch-label-on">F</label>
+                                        <span class="switch-selection"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control login-field" style="float:none;" type="password" required="" name="contra" placeholder="Contraseña" max-length="16">
+                                </div> 
+                                <div class="form-group" id="passForm">
+                                    <input  id='passError' class="form-control login-field" type="password" required="" name="contra2" placeholder="Contraseña (confirmar)" max-length="16" >
+                                </div>
+                                <div class="form-group">
+                                    <center>
+                                        <button class="btn btnref mrs" type="submit">Aceptar</button>
+                                    </center>
+                                </div>
+                            </form> 
+                        </div>
+                        </center>
+                    </div> 
+                </div>
+            </div>
+        </main>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <!-- Bootstrap 4 requires Popper.js -->
+        <script src="https://unpkg.com/popper.js@1.14.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+        <script src="http://vjs.zencdn.net/6.6.3/video.js"></script>
+        <script src="scripts/flat-ui.js"></script>
+        <script type="text/javascript">
+            $('#exampleModal').on('shown.bs.modal', function () {
+                $('#myInput').trigger('focus');
+                $("#email").focus();
+            })
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
+            // error en email
+
+            // <?php 
+            //     if (@$_GET['err1'] == '1') {
+            // ?>
+            // $('#emailError').attr("title","El correo electrónico digitado ya está en uso");
+            // $('#emailError').attr("data-toggle","tooltip");
+            // $('#emailError').attr("data-placement","top");
+            // $('#emailForm').addClass("has-error");
+            // <?php } ?>
+            // // error en pass
+            // <?php 
+            //     if (@$_GET['err2'] == '1') {
+            // ?>
+            // $('#passError').attr("title", "Las contraseñas no coinciden");
+            // $('#passError').attr("data-toggle","tooltip");
+            // $('#passError').attr("data-placement","top");
+            // $('#passForm').addClass("has-error");
+            // <?php } ?>
+
+        </script>
+        <!-- <?php 
+
+        if(@$_GET['erlogp'] == "1"){
+            echo "
+            <script>
+                $(document).ready(function(){
+                    $('#log').click();
+                    $('#pass').css('color','#e74c3c');
+                    $('#pass').css('border-color','#e74c3c');
+                    $('#pass').css('box-shadow','none');
+                    
+                });
+            </script>";
+        }
+        if(@$_GET['erlogm'] == "1"){
+            echo "
+            <script>
+                $(document).ready(function(){
+                    $('#log').click();
+                    $('#email').css('color','#e74c3c');
+                    $('#email').css('border-color','#e74c3c');
+                    $('#email').css('box-shadow','none');
+                });
+            </script>";
+        }
+        ?>
+         -->
+    </body>
+</html>
